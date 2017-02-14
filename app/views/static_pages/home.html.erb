@@ -1,0 +1,13 @@
+<div class="center jumbotron">
+  <h1><%= t("home_page.welcome") %></h1>
+  <h2>
+    <%= t("home_page.this_is_the_home_page_for_the") %>
+    <a href="http://www.railstutorial.org/"><%= t("home_page.tutorial_name") %>
+    </a>
+    <%= t("home_page.sample_application") %>
+  </h2>
+  <%= link_to t("home_page.signup_now"), signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+  <%= link_to image_tag("rails.png", alt: t("home_page.rails_logo")),
+    "http://rubyonrails.org/" %>
+  </div>
