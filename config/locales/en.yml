@@ -71,6 +71,10 @@ en:
   flash:
     profile_updated: "Profile updated"
     please_log_in: "Please log in"
+    please_check_email: "Please check your email to activate your account."
+    account_activated: "Account activated!"
+    invalid_activation_link: "Invalid activation link!"
+    warning_account_activation: "Account not activated. Check your email for the activation link."
   index_page:
     title: "All users"
     header: "All users"
@@ -78,3 +82,9 @@ en:
     delete: "Delete"
     successfully_deleted: "User was successfully deleted."
     delete_failed: "There was a problem deleting this user."
+  mailer:
+    subject: "Account activation"
+    activate: "Activate"
+    welcome: "Welcome to the Sample App! Click on the link below to activate.
+      your account:"
+    hi: "Hi"
