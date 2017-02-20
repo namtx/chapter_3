@@ -12,6 +12,12 @@ en:
     sample_application: "sample application"
     signup_now: "Sign up now!"
     rails_logo: "Rails logo"
+    microposts_feed: "Microposts Feed"
+    delete_micropost: "delete"
+    delete_confirm: "Are you sure?"
+    shouldlessthen5mb: "should be less than 5MB"
+    alert_maximum_image_size: "Maximum file size is 5MB. Please choose a smaller
+      file."
   help_page:
     tutorial_name: "Ruby on Rails Tutorial"
     the: "the"
@@ -79,6 +85,9 @@ en:
     reset_email_sent: "Email sent with password reset instruction"
     email_not_found: "Email address not found"
     password_has_been_reset: "Your password has been successfully reset"
+    micropost_delete_failed: "Something was wrong, micropost has not been deleted"
+    micropost_successfully_deleted: "Micropost deleted"
+    micropost_created: "Micropost created"
   index_page:
     title: "All users"
     header: "All users"
@@ -86,6 +95,7 @@ en:
     delete: "Delete"
     successfully_deleted: "User was successfully deleted."
     delete_failed: "There was a problem deleting this user."
+    microposts: "Microposts"
   mailer:
     subject: "Account activation"
     activate: "Activate"
@@ -110,3 +120,12 @@ en:
     header: "Reset password"
     password_confirmation: "Confirmation"
     cant_be_empty: "can't be empty!"
+  microposts_show:
+    posted: "Posted"
+    ago: "ago"
+  user_info:
+    view_my_profile: "view my profile"
+    micropost: "micropost"
+  microposts_form:
+    post: "Post"
+    compose: "Compose new micropost..."
