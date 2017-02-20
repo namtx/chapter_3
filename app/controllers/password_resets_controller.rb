@@ -43,7 +43,10 @@ class PasswordResetsController < ApplicationController
 
   def load_user
     @user = User.find_by email: params[:email]
-    @user || render(file: "public/404.html", status: 404, layout: true)
+    unless @user
+      flash[:danger] = t "flash.email_not_found"
+      render :new
+    end
   end
 
   def valid_user

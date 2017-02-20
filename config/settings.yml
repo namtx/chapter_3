@@ -2,5 +2,12 @@ login:
   remember_me: "1"
 users:
   users_per_page: 10
+  posts_per_page: 5
 mailer:
   host: "localhost:3000"
+home:
+  feeds_per_page: 5
+gavatar_size:
+  size_50: 50
+picture_upload:
+  maximum_size: 5

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
   before_action :load_user, only: [:show, :update, :edit, :destroy]
@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 
   def show
     redirect_to root_path and return unless @user.activated?
+    @microposts = @user.microposts.paginate page: params[:page],
+      per_page: Settings.users.posts_per_page
   end
 
   def create
