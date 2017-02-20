@@ -58,5 +58,5 @@ class UsersController < ApplicationController
   def load_user
     @user = User.find_by id: params[:id]
     @user || render(file: "public/404.html", status: 404, layout: true)
-    end
+  end
 end
