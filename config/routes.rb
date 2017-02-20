@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'sessions/new'
-
   get "/contact", to: "static_pages#contact"
 
   get "/about", to: "static_pages#about"
@@ -21,4 +18,5 @@ Rails.application.routes.draw do
   root "static_pages#home"
 
   resources :users
+  resources :account_activations, only: [:edit]
 end
