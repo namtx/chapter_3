@@ -61,6 +61,7 @@ en:
     sign_up_now: "Sign up now!"
     invalid_email_password: "Invalid email/password combination"
     remember_me: "Remember me on this computer"
+    forgot_password: "(forgot password)"
   edit_page:
     header: "Update your profile"
     title: "Edit user"
@@ -75,6 +76,9 @@ en:
     account_activated: "Account activated!"
     invalid_activation_link: "Invalid activation link!"
     warning_account_activation: "Account not activated. Check your email for the activation link."
+    reset_email_sent: "Email sent with password reset instruction"
+    email_not_found: "Email address not found"
+    password_has_been_reset: "Your password has been successfully reset"
   index_page:
     title: "All users"
     header: "All users"
@@ -88,3 +92,21 @@ en:
     welcome: "Welcome to the Sample App! Click on the link below to activate.
       your account:"
     hi: "Hi"
+  reset_mailer:
+    subject: "Password reset"
+    header: "Password reset"
+    to_reset_password: "To reset password click the link below: "
+    reset_password: "Reset password"
+    expire_in: "This link will expire in two hours"
+    caution: "If you did not request your password to be reset, please ignore
+      this password and your password will stay as it is."
+  reset_page:
+    title: "Forgot password"
+    header: "Forgot password"
+    submit: "Send me reset email"
+  password_edit:
+    update: "Update password"
+    title: "Reset password"
+    header: "Reset password"
+    password_confirmation: "Confirmation"
+    cant_be_empty: "can't be empty!"
