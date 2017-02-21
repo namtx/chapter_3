@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :logged_in_user, except: [:new, :show, :edit]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
   before_action :load_user, only: [:show, :update, :edit, :destroy]
@@ -14,6 +14,9 @@ class UsersController < ApplicationController
 
   def show
     redirect_to root_path and return unless @user.activated?
+    @micropost_quantity = @user.microposts.size
+    @followers_quantity = @user.followers.size
+    @following_quantity = @user.following.size
     @microposts = @user.microposts.paginate page: params[:page],
       per_page: Settings.users.posts_per_page
   end
@@ -49,6 +52,30 @@ class UsersController < ApplicationController
       flash[:danger] = t "index_page.delete_failed"
       redirect_to users_path
     end
+  end
+
+  def following
+    @title = t "show_follow.following"
+    @user = load_user
+    @micropost_quantity = @user.microposts.size
+    @followers_quantity = @user.followers.size
+    @following_quantity = @user.following.size
+    @users = @user.following
+    @users_with_paginate = @users.paginate page: params[:page],
+      per_page: Settings.follow_per_page
+    render "show_follow"
+  end
+
+  def followers
+    @title = t "show_follow.followers"
+    @user = load_user
+    @micropost_quantity = @user.microposts.size
+    @followers_quantity = @user.followers.size
+    @following_quantity = @user.following.size
+    @users = @user.followers
+    @users_with_paginate = @users.paginate page: params[:page],
+      per_page: Settings.follow_per_page
+    render "show_follow"
   end
 
   private

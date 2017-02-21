@@ -24,6 +24,7 @@ gem "carrierwave", "1.0.0"
 gem "mini_magick", "4.5.1"
 gem "fog", "1.38.0"
 gem "i18n-js", "3.0.0.rc15"
+gem "pry"
 
 group :development, :test do
   gem "byebug", platform: :mri

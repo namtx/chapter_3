@@ -5,7 +5,10 @@ class Micropost < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true, length: {maximum: 140}
   validate :picture_size
-
+  scope :get_following_feed, -> (following_ids, user_id) do
+    where "user_id IN (#{following_ids.pluck(:followed_id).join(", ")})\
+      OR user_id = #{user_id}"
+  end
   private
   def picture_size
     if picture.size > Settings.picture_upload.maximum_size.megabytes
