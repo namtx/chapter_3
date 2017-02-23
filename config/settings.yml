@@ -5,6 +5,7 @@ users:
   posts_per_page: 5
 mailer:
   host: "localhost:3000"
+  production: "minami-rails.herokuapp.com"
 home:
   feeds_per_page: 5
 gavatar_size:

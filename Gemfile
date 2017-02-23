@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem "rails", "~> 5.0.1"
-gem "sqlite3"
 gem 'bcrypt', "3.1.11"
 gem "puma", "~> 3.0"
 gem "sass-rails", "~> 5.0"
@@ -28,6 +27,7 @@ gem "pry"
 
 group :development, :test do
   gem "byebug", platform: :mri
+  gem "sqlite3"
 end
 
 group :development do
@@ -37,6 +37,9 @@ group :development do
   gem "spring-watcher-listen", "~> 2.0.0"
 end
 
+group :production do
+  gem "pg"
+end
 group :test do
   gem "minitest-reporters",       "1.1.9"
   gem "guard",                    "2.13.0"
