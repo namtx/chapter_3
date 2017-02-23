@@ -1,0 +1,15 @@
+one:
+  follower: tranxuannam
+  followed: admin
+
+two:
+  follower: admin
+  followed: tranxuannam
+
+three:
+  follower: maria
+  followed: tranxuannam
+
+four:
+  follower: tranxuannam
+  followed: maria

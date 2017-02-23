@@ -1,5 +1,11 @@
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name: Relationship.name,
+    foreign_key: "follower_id", dependent: :destroy
+  has_many :passive_relationships, class_name: Relationship.name,
+    foreign_key: "followed_id", dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
@@ -9,7 +15,6 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}, allow: nil
-
   def self.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
       BCrypt::Engine.cost
@@ -62,14 +67,26 @@ class User < ApplicationRecord
   end
 
   def feed
-    microposts
+    Micropost.get_following_feed Relationship.following_ids(id), id
+  end
+
+  def follow other_user
+    active_relationships.create followed_id: other_user.id 
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include? other_user
   end
 
   private
   def downcase_email
     self.email = email.downcase
   end
-  
+
   def create_activation_digest
     self.activation_token = User.new_token
     self.activation_digest = User.digest activation_token

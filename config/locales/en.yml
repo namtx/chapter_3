@@ -88,6 +88,8 @@ en:
     micropost_delete_failed: "Something was wrong, micropost has not been deleted"
     micropost_successfully_deleted: "Micropost deleted"
     micropost_created: "Micropost created"
+    follow_error: "Some thing was wrong, try again later!"
+    unfollow_error: "Some thing was wrong, try again later!"
   index_page:
     title: "All users"
     header: "All users"
@@ -96,6 +98,8 @@ en:
     successfully_deleted: "User was successfully deleted."
     delete_failed: "There was a problem deleting this user."
     microposts: "Microposts"
+    follow: "Follow"
+    unfollow: "Unfollow"
   mailer:
     subject: "Account activation"
     activate: "Activate"
@@ -124,8 +128,17 @@ en:
     posted: "Posted"
     ago: "ago"
   user_info:
-    view_my_profile: "view my profile"
+    view_profile: "view profile"
     micropost: "micropost"
   microposts_form:
     post: "Post"
     compose: "Compose new micropost..."
+  stats:
+    following: "following"
+    followers: "followers"
+  show_follow:
+    title_following: "Following"
+    title_followers: "Followers"
+    following: "Following"
+    followers: "Followers"
+    microposts: "Microposts:"

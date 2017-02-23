@@ -9,5 +9,7 @@ home:
   feeds_per_page: 5
 gavatar_size:
   size_50: 50
+  size_30: 30
 picture_upload:
   maximum_size: 5
+follow_per_page: 5
